@@ -4,7 +4,8 @@ from .models import CustomUser, Blog
 
 
 class CustomUserAdmin(UserAdmin):
-    list_display = ('username', 'email', 'first_name', 'last_name')
+    list_display = ('username', 'first_name', 'last_name', 'bio', 'img', 
+                    'facebook', 'instagram', 'youtube', 'twitter')
 
 admin.site.register(CustomUser, CustomUserAdmin)
 

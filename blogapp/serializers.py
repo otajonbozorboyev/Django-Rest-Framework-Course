@@ -3,6 +3,14 @@ from django.contrib.auth import get_user_model
 from .models import Blog
 
 
+
+class UpdateUserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = get_user_model()
+        fields = ['id', 'email', 'username', 'first_name', 'last_name', 'bio', 'img', 
+                'facebook', 'youtube', 'instagram', 'twitter']
+
+
 class UserRegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
