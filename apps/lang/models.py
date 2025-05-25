@@ -13,14 +13,12 @@ class Language(models.Model):
         return self.name
 
 
-
 class Level(models.Model):
     name = models.CharField(max_length=100)
     language = models.ForeignKey(Language, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
-
 
 
 class Unit(models.Model):
@@ -37,7 +35,6 @@ class Unit(models.Model):
         return self.name
 
 
-
 class Vocabulary(models.Model):
     unit = models.ForeignKey(Unit, on_delete=models.CASCADE, related_name='vocabularies')
     word = models.CharField(max_length=100)
@@ -48,7 +45,6 @@ class Vocabulary(models.Model):
 
     def __str__(self):
         return self.word
-
 
 
 class Phrase(models.Model):
@@ -63,7 +59,6 @@ class Phrase(models.Model):
         return self.word
 
 
-
 class PodcastBanner(models.Model):
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to='images/')
@@ -72,7 +67,6 @@ class PodcastBanner(models.Model):
 
     def __str__(self):
         return self.title
-
 
 
 class VideoBanner(models.Model):
@@ -85,7 +79,6 @@ class VideoBanner(models.Model):
         return self.title
 
 
-
 class BookBanner(models.Model):
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to='images/')
@@ -94,7 +87,6 @@ class BookBanner(models.Model):
 
     def __str__(self):
         return self.title
-
 
 
 class Podcast(models.Model):
@@ -107,7 +99,6 @@ class Podcast(models.Model):
         return self.title
 
 
-
 class Video(models.Model):
     language = models.ForeignKey(Language, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
@@ -116,7 +107,6 @@ class Video(models.Model):
 
     def __str__(self):
         return self.title
-
 
 
 class Book(models.Model):
